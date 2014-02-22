@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE tiles-definitions PUBLIC
+           "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+           "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<!-- This file has several definitions of page layouts -->
+<tiles-definitions>
+
+	<!-- The main definition with the header footer menu and body -->
+	<definition name="base.definition" template="/WEB-INF/views/layout/mainTemplate.jsp">
+		<put-attribute name="title" value="Easy Green Campus"></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/views/layout/menu.jsp"></put-attribute>
+		<put-attribute name="body" value=""></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp"></put-attribute>
+	</definition>
+
+	<!-- Now you can specify as many layours as you want... The name will match 
+		the names the -->
+	<!-- HomeController.java returns aka... as we specified it as displayPageContent1 
+		and displayPageContent2 -->
+	<!-- You can override each of the base.definition entries. In this we change 
+		the page title and display a different -->
+	<!-- page as the body. As we didn't override the menu of footer it will 
+		display as specified in the base.defition -->
+
+	<definition name="*/*" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/views/pages/{1}/{2}.jsp" />
+	</definition>
+
+	<definition name="connexion" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/views/pages/connexion.jsp" />
+	</definition>
+
+	<definition name="inscription" extends="base.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/pages/inscription.jsp" />
+	</definition>
+
+
+	<definition name="index" extends="base.definition">
+		<put-attribute name="title" value="Page context 1 displaying..."></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/index.jsp"></put-attribute>
+	</definition>
+
+</tiles-definitions>
