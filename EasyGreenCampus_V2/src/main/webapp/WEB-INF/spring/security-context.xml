@@ -15,6 +15,7 @@
 		<intercept-url pattern="/index" 	access="isAnonymous()" />
 		<intercept-url pattern="/inscription" access="isAnonymous()" />
 		<intercept-url pattern="/news/news" access="isAnonymous()" />
+		<intercept-url pattern="/resources/**" access="isAnonymous()" />
 		<intercept-url pattern="/**"
 			access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
 		<logout logout-success-url="/index" />
