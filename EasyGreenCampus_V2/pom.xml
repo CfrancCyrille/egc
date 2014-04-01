@@ -170,6 +170,7 @@
 		</dependency>
 
 		<!-- Test -->
+		<!-- Modification pour tester egit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
